@@ -34,9 +34,9 @@ class YourComponent extends React.Component {
         appKey={APP_KEY}
         accessToken={accessToken}
         filepath={filepath}
-        onLogin={accessToken => this.setState({ accessToken })}
+        onLogin={token => this.setState({ accessToken: token })}
         onLogout={() => this.setState({ accessToken: null, filepath: null })}
-        onFilePick={filepath => this.setState({ filepath })}
+        onFilePick={path => this.setState({ filepath: path })}
         onError={error => console.error(error.message)}
       />
     )
@@ -65,5 +65,21 @@ The FilePicker accepts the following arguments:
 
 ## Developer Notes
 
+### Running the project
+
+The `example` folder has a simple app that uses the DropboxFilePicker and saves all data as local state.
+
+To run the example:
+
+1. Create a Dropbox App in the [App Console](https://www.dropbox.com/developers/apps). Take note of your app key.
+2. Make sure to add `http://localhost:8080/` as a valid _Redirect URI_
+3. Run the example app with:
+
+```
+npm install
+APP_KEY='YOUR DROPBOX APP KEY' npm start
+```
+
 ### Publish to npm
+
 Run: `npm run build && npm publish`

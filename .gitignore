@@ -8,3 +8,4 @@ npm-debug.*
 web-build/
 web-report/
 lib
+.env

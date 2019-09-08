@@ -7,11 +7,11 @@
   "license": "ISC",
   "scripts": {
     "start": "webpack-dev-server --open",
-    "build": "webpack --mode production --output-library-target commonjs-module"
+    "build": "webpack --mode production --output-library-target commonjs-module",
+    "lint": "eslint src/**/*.js",
+    "test": "jest",
+    "test-debug": "node --inspect-brk=0.0.0.0:9229 ./node_modules/.bin/jest"
   },
-  "files": [
-    "lib"
-  ],
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
@@ -24,9 +24,13 @@
       "git add"
     ]
   },
+  "files": [
+    "lib"
+  ],
   "dependencies": {
     "@babel/runtime": "^7.6.0",
     "dropbox": "^4.0.30",
+    "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "semantic-ui-css": "^2.4.1",
@@ -35,9 +39,28 @@
   "devDependencies": {
     "@babel/core": "^7.6.0",
     "@babel/plugin-transform-runtime": "^7.6.0",
+    "@babel/polyfill": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "eslint": "^6.3.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.17.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "file-loader": "^4.2.0",
+    "husky": "^3.0.5",
+    "jest": "^24.9.0",
+    "jest-cli": "^24.9.0",
+    "lint-staged": "^9.2.5",
+    "prettier": "^1.18.2",
+    "style-loader": "^1.0.0",
+    "svg-inline-loader": "^0.8.0",
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.8",
     "webpack-dev-server": "^3.8.0"
