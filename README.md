@@ -13,6 +13,10 @@ This project assumes:
 1. `npm install --save react-dropbox-filepicker`
 2. Include the provided `<FilePicker />` component in your app
 
+IMPORTANT:  
+In this initial version of react-dropbox-filepicker I'm using components from [Semantic UI React](https://react.semantic-ui.com/).  
+In order for components to render correctly, you need to add a Theme as [described here](https://react.semantic-ui.com/usage#theme).
+
 ```
 import FilePicker from "react-dropbox-filepicker";
 
