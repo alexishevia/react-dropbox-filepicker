@@ -4,7 +4,7 @@ import { Button } from "semantic-ui-react";
 
 export default function FilePickButton({ onClick }) {
   return (
-    <Button primary style={{ marginRight: 20 }} onClick={onClick}>
+    <Button style={{ marginRight: 20 }} onClick={onClick} primary>
       Select File
     </Button>
   );

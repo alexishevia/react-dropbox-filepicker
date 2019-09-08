@@ -85,18 +85,19 @@ class FilePicker extends React.Component {
     onError(new Error(`Filepicker: Unkown node type: ${node.type}`));
   }
 
-  async load() {
+  load() {
     const { accessToken, onError } = this.props;
     const { isLoading, hasError, path, contents } = this.state;
     if (isLoading || hasError || contents !== null) return;
     this.setState({ isLoading: true, hasError: false });
-    try {
-      const result = await loadDir({ accessToken, path });
-      this.setState({ isLoading: false, contents: result.contents });
-    } catch (err) {
-      onError(err);
-      this.setState({ isLoading: false, hasError: true });
-    }
+    loadDir({ accessToken, path })
+      .then((result) => {
+        this.setState({ isLoading: false, contents: result.contents });
+      })
+      .catch((err) => {
+        onError(err);
+        this.setState({ isLoading: false, hasError: true });
+      });
   }
 
   renderHeader() {

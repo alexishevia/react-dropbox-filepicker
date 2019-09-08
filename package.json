@@ -6,8 +6,8 @@
   "author": "Alexis Hevia <hevia.alexis@gmail.com>",
   "license": "ISC",
   "scripts": {
-    "lint": "eslint src/**/*.js",
-    "build": "webpack --entry ./src/index.js -o ./lib/index.js --devtool source-map --mode production --output-library-target commonjs-module"
+    "start": "webpack-dev-server --open",
+    "build": "webpack --mode production --output-library-target commonjs-module"
   },
   "files": [
     "lib"
@@ -25,24 +25,21 @@
     ]
   },
   "dependencies": {
+    "@babel/runtime": "^7.6.0",
+    "dropbox": "^4.0.30",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.88.0"
   },
   "devDependencies": {
-    "eslint": "^6.3.0",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-prettier": "^6.2.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jest": "^22.17.0",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-react": "^7.14.3",
-    "husky": "^3.0.5",
-    "jest": "^24.9.0",
-    "jest-cli": "^24.9.0",
-    "lint-staged": "^9.2.5",
-    "prettier": "^1.18.2",
+    "@babel/core": "^7.6.0",
+    "@babel/plugin-transform-runtime": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
     "webpack": "^4.39.3",
-    "webpack-cli": "^3.3.8"
+    "webpack-cli": "^3.3.8",
+    "webpack-dev-server": "^3.8.0"
   }
 }

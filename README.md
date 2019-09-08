@@ -34,10 +34,10 @@ class YourComponent extends React.Component {
         appKey={APP_KEY}
         accessToken={accessToken}
         filepath={filepath}
-        onLogin={accessToken => this.setState({ accessToken });}
-        onLogout={() => this.setState({ accessToken: null, filepath: null });}
-        onFilePick={filepath => this.setState({ filepath });}
-        onError={error => console.error(error.message);}
+        onLogin={accessToken => this.setState({ accessToken })}
+        onLogout={() => this.setState({ accessToken: null, filepath: null })}
+        onFilePick={filepath => this.setState({ filepath })}
+        onError={error => console.error(error.message)}
       />
     )
   }
@@ -62,3 +62,8 @@ The FilePicker accepts the following arguments:
   Executed when the user selects a file.
 - `onError()`
   Executed when an unexpected error happens.
+
+## Developer Notes
+
+### Publish to npm
+Run: `npm run build && npm publish`
